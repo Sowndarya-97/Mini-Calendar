@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calendar Using Javascript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="calendar">
+            <div class="left">
+                <p id="date">01</p>
+                <p id="day">Sunday</p>
+            </div>
+            <div class="right">
+                <p id="month">August</p>
+                <p id="year">2022</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        //Get all the elements which we want to change
+        const date = document.getElementById("date");
+        const day = document.getElementById("day");
+        const month = document.getElementById("month");
+        const year = document.getElementById("year");
+
+
+        //Get todays date
+
+        const today = new Date();
+        //console.log(today);
+
+        //Since it has taken day and month as number we are using array format here..
+
+        const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+        const allMonths = ["January", "February", "March", "April", "May", "June", "July",
+            "August", "September", "October", "November", "December"
+        ];
+
+        //date html part will be removed and the todays date get updated
+        
+        //same as day, month and year
+
+        //Incase date is single digit that is less than 10 means add 0 in empty string
+
+        date.innerHTML=(today.getDate()<10?"0":"")+today.getDate();
+        day.innerHTML=weekDays[today.getDay()];
+        month.innerHTML=weekDays[today.getMonth()];
+        year.innerHTML=today.getFullYear();
+
+        
+        
+    </script>
+</body>
+</html>
